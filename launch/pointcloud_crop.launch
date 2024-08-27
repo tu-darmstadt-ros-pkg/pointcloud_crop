@@ -1,5 +1,6 @@
 <launch>
 
+<arg name="node_name" default="pointcloud_crop_node" />
 <arg name="input_topic" default="/input_topic_name" />
 <arg name="output_topic" default="/output_topic_name" />
 <arg name="min_x" default="-1.0" />
@@ -10,7 +11,7 @@
 <arg name="max_z" default="1.0" />
 <arg name="negative" default="false" />
 
-<node name="pointcloud_crop_node" pkg="pointcloud_crop" type="pointcloud_crop_node" output="screen">
+<node name="$(arg node_name)" pkg="pointcloud_crop" type="pointcloud_crop_node" output="screen">
     <param name="min_x" value="$(arg min_x)" />
     <param name="max_x" value="$(arg max_x)" />
     <param name="min_y" value="$(arg min_y)" />
